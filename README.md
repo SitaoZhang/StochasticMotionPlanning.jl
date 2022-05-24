@@ -12,4 +12,4 @@ Run all files in "src" folder before running files in "examples" folder, the cor
 4.  ccm.jl
 5.  l1.jl
 
-Before running ex2.jl, run all files in "iterative LQG" folder. Note that all files in "iterative LQG" are running in Matlab.
+Before running ex2.jl, run all files in "iterative LQG" folder. Note that all files in "iterative LQG" folder are running in Matlab.
