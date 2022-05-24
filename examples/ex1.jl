@@ -16,7 +16,7 @@ f(x) = [-x[1] + 2*x[2];
 B = [0.5, -2.0]
 
 # (Unknown) Diffusion Parameter 
-sigma(t, x) = 0.01*x[2]^2
+Sigma(t, x) = 0.01*x[2]^2
 # Sim time
 tspan = (0., 5.)
 
@@ -31,7 +31,7 @@ us = 0.0
 # Uncertainty and upper bound
 h(t, x) = 2*sin(2*t)
 Δh = 2.0
-Sigma(t, x) = 0.01*x[1]^2
+sigma(t, x) = 0.01*x[1]^2
 Δg = 0.04
 
 # L1 filter bandwidth and adaptation rate
