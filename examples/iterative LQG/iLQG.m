@@ -1,3 +1,7 @@
+% This piece of code is adapted from: https://www.mathworks.com/matlabcentral/fileexchange/52069-ilqg-ddp-trajectory-optimization
+% Citation: Yuval (2022). iLQG/DDP trajectory optimization (https://www.mathworks.com/matlabcentral/fileexchange/52069-ilqg-ddp-trajectory-optimization), MATLAB Central File Exchange. Retrieved May 23, 2022.
+
+
 function [x, u, L, Vx, Vxx, cost, trace, stop] = iLQG(DYNCST, x0, u0, Op)
 % iLQG - solve the deterministic finite-horizon optimal control problem.
 %
