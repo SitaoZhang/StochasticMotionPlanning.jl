@@ -1,3 +1,7 @@
+% This piece of code is adapted from: https://www.mathworks.com/matlabcentral/fileexchange/52069-ilqg-ddp-trajectory-optimization
+% Citation: Yuval (2022). iLQG/DDP trajectory optimization (https://www.mathworks.com/matlabcentral/fileexchange/52069-ilqg-ddp-trajectory-optimization), MATLAB Central File Exchange. Retrieved May 23, 2022.
+
+
 function [x,result,Hfree,free,trace] = boxQP(H,g,lower,upper,x0,options)
 % Minimize 0.5*x'*H*x + x'*g  s.t. lower<=x<=upper
 %
