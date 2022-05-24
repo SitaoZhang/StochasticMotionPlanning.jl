@@ -550,7 +550,7 @@ if figures ~= 0  && ( mod(mT,figures) == 0 || init == 2 )
     set(0,'currentfigure',fig1);
     clf(fig1);
     
-    ax1   = subplot(2,2,1);
+    ax1   = subplot(2,1,1);
     set(ax1,'XAxisL','top','YAxisL','right','xlim',[1 N],'xtick',[])
     line(1:N,cost,'linewidth',4,'color',.5*[1 1 1]);
     ax2 = axes('Position',get(ax1,'Position'));
@@ -559,7 +559,7 @@ if figures ~= 0  && ( mod(mT,figures) == 0 || init == 2 )
     set(ax1,'Position',get(ax2,'Position'));
     double_title(ax1,ax2,'state','running cost')
     
-    axL = subplot(2,2,3);
+    axL = subplot(2,1,2);
     CO = get(axL,'colororder');
     set(axL,'nextplot','replacechildren','colororder',CO(1:min(n,7),:))
     Lp = reshape(permute(L,[2 1 3]), [nL*m N-1])';
@@ -575,22 +575,6 @@ if figures ~= 0  && ( mod(mT,figures) == 0 || init == 2 )
     set(axL,'Position',get(axu,'Position'));
     double_title(axu,axL,'controls','gains')
     xlabel 'timesteps'
-    
-    ax1      = subplot(2,2,2);
-    set(ax1,'XAxisL','top','YAxisL','right','xlim',[1 mT+eps],'xtick',[])
-    hV = line(T,[trace(T).cost],'linewidth',4,'color',.5*[1 1 1]);
-    ax2 = axes('Position',get(ax1,'Position'));
-    converge = [[trace(T).lambda]' [trace(T).alpha]' [trace(T).grad_norm]' [trace(T).improvement]'];
-    hT = semilogy(T,max(0, converge),'.-','linewidth',2,'markersize',10);
-    set(ax2,'xlim',[1 mT+eps],'Ygrid','on','YMinorGrid','off','color','none');
-    set(ax1,'Position',get(ax2,'Position'));
-    double_title(ax1,ax2,'convergence trace','total cost')
-    
-    subplot(2,2,4);
-    plot(T,[trace(T).reduc_ratio]','.-','linewidth',2);
-    title 'actual/expected reduction ratio'
-    set(gca,'xlim',[0 mT+1],'ylim',[0 2],'Ygrid','on');
-    xlabel 'iterations'
     
     set(findobj(fig1,'-property','FontSize'),'FontSize',8)
     stop = get(fig1,'user');
