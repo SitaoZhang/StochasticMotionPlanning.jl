@@ -57,7 +57,7 @@ function [f,c,fx,fu,fxx,fxu,fuu,cx,cu,cxx,cxu,cuu] = nonlin_dyn_cst(x,u,A,B,Q,R)
         end
         
         f = A*x + B*u + 0.01*[0; -0.05].*(x(2))^3 + 0.1*B.*0.01*(x(2))^2*randn(1, 1);
-        c = 0.5*sum(x.*(Q*x),1) + 0.5*sum(u.*(R*u),1);
+        c = sum(x.*(Q*x),1) + sum(u.*(R*u),1);
         
     else 
         N   = size(x,2);
