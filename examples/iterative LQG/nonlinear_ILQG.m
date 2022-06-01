@@ -7,14 +7,14 @@ function nonlinear_ILQG
 clc;
 
 % make stable nonlinear dynamics
-h = 0.01;           % time step
+dt = 0.01;          % time step
 n = 2;              % state dimension
 m = 1;              % control dimension
 
 A = [-1 2; -3 -1];
-A = h*A + eye(length(A));
+A = dt*A + eye(length(A));
 % A = expm(h*A);  % discrete time
-B = h*[0.5; -2];
+B = dt*[0.5; -2];
 
 % quadratic costs
 Q = eye(n);
